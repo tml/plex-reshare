@@ -58,7 +58,7 @@ docker-compose:
 	@docker compose up -d --force-recreate
 
 build:
-	@echo "$(OPENRESTY)\n$${DOCKERFILE}" | docker build --no-cache -t "peterbuga/plex-reshare:$(VERSION)" -f - .
+	@echo -e "$(OPENRESTY)\n$${DOCKERFILE}" | docker build --no-cache -t "peterbuga/plex-reshare:$(VERSION)" -f - .
 ifneq ($(VERSION), latest)
 	@docker image tag "peterbuga/plex-reshare:$(VERSION)" "peterbuga/plex-reshare:latest"
 endif
